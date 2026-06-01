@@ -14,6 +14,13 @@
   <!-- NOISE OVERLAY -->
   <div class="noise"></div>
 
+  <!-- MOVING BACKGROUND BLOBS (Lando Norris style) -->
+  <div class="blob-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
   <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
@@ -27,6 +34,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#languages">Tech</a>
       <a href="#projects">Projects</a>
       <a href="#credentials">Credentials</a>
       <a href="#contact">Contact</a>
@@ -177,10 +185,174 @@
     </div>
   </section>
 
+  <!-- LANGUAGES & FRAMEWORKS -->
+  <section class="languages" id="languages">
+    <div class="languages-header">
+      <div class="section-eyebrow">/ 03 — Tech Stack</div>
+      <h2 class="languages-title reveal">
+        LANGUAGES<br><span class="stroke-text">&amp; FRAMEWORKS</span>
+      </h2>
+    </div>
+
+    <div class="languages-grid">
+      <!-- C -->
+      <div class="lang-card reveal" data-lang="c">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">c_sandbox.c</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">C</span>
+            <span class="lang-name">C</span>
+          </div>
+          <code class="lang-snippet">printf("Hello, secure world\n");</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Java -->
+      <div class="lang-card reveal" data-lang="java">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">SecureApp.java</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">JV</span>
+            <span class="lang-name">Java</span>
+          </div>
+          <code class="lang-snippet">System.out.println("Shield active");</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="lang-card reveal" data-lang="python">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">scanner.py</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">PY</span>
+            <span class="lang-name">Python</span>
+          </div>
+          <code class="lang-snippet">import os, hashlib, socket</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="lang-card reveal" data-lang="javascript">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">auth.js</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">JS</span>
+            <span class="lang-name">JavaScript</span>
+          </div>
+          <code class="lang-snippet">const key = await crypto.generate();</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 92%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- React -->
+      <div class="lang-card reveal" data-lang="react">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">Dashboard.jsx</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">RE</span>
+            <span class="lang-name">React</span>
+          </div>
+          <code class="lang-snippet">return &lt;SecureDashboard /&gt;;</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 88%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HTML -->
+      <div class="lang-card reveal" data-lang="html">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">index.html</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">&lt;&gt;</span>
+            <span class="lang-name">HTML</span>
+          </div>
+          <code class="lang-snippet">&lt;main id="sandbox"&gt;&lt;/main&gt;</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="lang-card reveal" data-lang="css">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">theme.css</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">#</span>
+            <span class="lang-name">CSS</span>
+          </div>
+          <code class="lang-snippet">body { --neon: #D2FF00; }</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotlin + XML -->
+      <div class="lang-card reveal" data-lang="kotlin">
+        <div class="lang-glow"></div>
+        <div class="lang-terminal-header">
+          <span class="lang-terminal-dot"></span>
+          <span class="lang-terminal-title">MainActivity.kt</span>
+        </div>
+        <div class="lang-content">
+          <div class="lang-info">
+            <span class="lang-icon">KT</span>
+            <span class="lang-name">Kotlin+XML</span>
+          </div>
+          <code class="lang-snippet">val cipher = Cipher.getInstance()</code>
+          <div class="lang-progress">
+            <div class="lang-bar" style="width: 82%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section class="projects" id="projects">
     <div class="projects-header">
-      <div class="section-eyebrow">/ 03 — Projects</div>
+      <div class="section-eyebrow">/ 04 — Projects</div>
       <h2 class="projects-title reveal">
         SELECTED<br><span class="stroke-text">WORK</span>
       </h2>
@@ -216,7 +388,11 @@
           </div>
         </div>
         <div class="project-visual">
-          <div class="project-art art-crypto">
+          <div class="project-art art-crypto" data-interactive="crypto">
+            <div class="art-terminal-header">
+              <span class="art-terminal-dot"></span>
+              <span class="art-terminal-title">Cryptox.exe — Click to Decrypt</span>
+            </div>
             <div class="hex-grid">
               <span>A3F</span><span>7C2</span><span>E91</span>
               <span>B4D</span><span>0F8</span><span>5A6</span>
@@ -255,7 +431,11 @@
           </div>
         </div>
         <div class="project-visual">
-          <div class="project-art art-voice">
+          <div class="project-art art-voice" data-interactive="voice">
+            <div class="art-terminal-header">
+              <span class="art-terminal-dot"></span>
+              <span class="art-terminal-title">VoxKey.exe — Click to Rec</span>
+            </div>
             <div class="waveform">
               <span style="--h:20%"></span><span style="--h:60%"></span><span style="--h:40%"></span>
               <span style="--h:90%"></span><span style="--h:55%"></span><span style="--h:75%"></span>
@@ -295,7 +475,11 @@
           </div>
         </div>
         <div class="project-visual">
-          <div class="project-art art-phishing">
+          <div class="project-art art-phishing" data-interactive="phishing">
+            <div class="art-terminal-header">
+              <span class="art-terminal-dot"></span>
+              <span class="art-terminal-title">VerifLink.exe — Click to Scan</span>
+            </div>
             <div class="url-scan">
               <div class="url-bar">
                 <div class="url-danger-icon">
@@ -338,7 +522,11 @@
           </div>
         </div>
         <div class="project-visual">
-          <div class="project-art art-compiler">
+          <div class="project-art art-compiler" data-interactive="compiler">
+            <div class="art-terminal-header">
+              <span class="art-terminal-dot"></span>
+              <span class="art-terminal-title">frogc.exe — Click to Compile</span>
+            </div>
             <div class="code-snippet">
               <div class="code-line"><span class="kw">func</span> <span class="fn">encrypt</span>(msg) {</div>
               <div class="code-line indent"><span class="kw">let</span> key = <span class="str">generate()</span>;</div>

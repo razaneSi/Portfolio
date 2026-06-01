@@ -19,13 +19,13 @@
   }
 
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(8,9,9,0.05)';
+    ctx.fillStyle = 'rgba(40, 44, 32, 0.06)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.font = '11px IBM Plex Mono, monospace';
     for (let i = 0; i < drops.length; i++) {
       const char = chars[Math.floor(Math.random() * chars.length)];
       ctx.globalAlpha = Math.random() * 0.35 + 0.05;
-      ctx.fillStyle = Math.random() > 0.97 ? '#fff' : '#c8f135';
+      ctx.fillStyle = Math.random() > 0.97 ? '#fff' : '#D2FF00';
       ctx.fillText(char, i * 13, drops[i] * 13);
       if (drops[i] * 13 > canvas.height && Math.random() > 0.975) drops[i] = 0;
       drops[i]++;
@@ -36,6 +36,27 @@
   resizeCanvas();
   let matrixInterval = setInterval(drawMatrix, 65);
   window.addEventListener('resize', resizeCanvas);
+
+
+  // ── BACKGROUND BLOBS INTERACTIVE MOTION (Lando Norris style) ────────────
+  const bgBlobs = document.querySelectorAll('.blob');
+  let bgX = 0, bgY = 0, targetBgX = 0, targetBgY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    targetBgX = (e.clientX / window.innerWidth) - 0.5;
+    targetBgY = (e.clientY / window.innerHeight) - 0.5;
+  });
+
+  (function updateBgBlobs() {
+    bgX += (targetBgX - bgX) * 0.05; // smooth lag/lerp
+    bgY += (targetBgY - bgY) * 0.05;
+    
+    bgBlobs.forEach((blob, idx) => {
+      const depth = (idx + 1) * 60; // parallax depth
+      blob.style.transform = `translate3d(${bgX * depth}px, ${bgY * depth}px, 0)`;
+    });
+    requestAnimationFrame(updateBgBlobs);
+  })();
 
 
   // ── CUSTOM CURSOR ───────────────────────────────────────────────────────
@@ -57,7 +78,7 @@
     requestAnimationFrame(animateCursor);
   })();
 
-  document.querySelectorAll('a, button, .skill-card, .project-item, .badge-img, .area-item').forEach(el => {
+  document.querySelectorAll('a, button, .skill-card, .lang-card, .project-item, .project-art, .badge-img, .area-item').forEach(el => {
     el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
@@ -90,8 +111,8 @@
   const revealEls = document.querySelectorAll('.reveal');
 
   // Stagger children within groups
-  document.querySelectorAll('.skills-grid .skill-card, .projects-list .project-item, .area-list .area-item').forEach((el, i) => {
-    el.style.transitionDelay = (i * 70) + 'ms';
+  document.querySelectorAll('.skills-grid .skill-card, .languages-grid .lang-card, .projects-list .project-item, .area-list .area-item').forEach((el, i) => {
+    el.style.transitionDelay = (i * 60) + 'ms';
   });
 
   const observer = new IntersectionObserver((entries) => {
@@ -175,6 +196,99 @@
     });
     art.addEventListener('mouseleave', () => { art.style.transform = ''; });
   });
+
+
+  // ── PROJECT CLICK INTERACTIONS ──────────────────────────────────────────
+  // Cryptox Decrypt
+  const artCrypto = document.querySelector('.art-crypto');
+  if (artCrypto) {
+    const hexSpan = artCrypto.querySelectorAll('.hex-grid span');
+    const charsHex = '0123456789ABCDEF';
+    const originalTexts = Array.from(hexSpan).map(s => s.textContent);
+    let isDecrypting = false;
+    
+    artCrypto.addEventListener('click', () => {
+      if (isDecrypting) return;
+      isDecrypting = true;
+      artCrypto.classList.add('decrypted');
+      
+      let count = 0;
+      const interval = setInterval(() => {
+        hexSpan.forEach(span => {
+          span.textContent = charsHex[Math.floor(Math.random() * charsHex.length)] + 
+                             charsHex[Math.floor(Math.random() * charsHex.length)] + 
+                             charsHex[Math.floor(Math.random() * charsHex.length)];
+        });
+        count++;
+        if (count > 10) {
+          clearInterval(interval);
+          hexSpan.forEach((span, idx) => {
+            span.textContent = originalTexts[idx];
+          });
+          artCrypto.classList.remove('decrypted');
+          isDecrypting = false;
+        }
+      }, 70);
+    });
+  }
+
+  // VoxKey Recording wave spike
+  const artVoice = document.querySelector('.art-voice');
+  if (artVoice) {
+    let isSpiking = false;
+    artVoice.addEventListener('click', () => {
+      if (isSpiking) return;
+      isSpiking = true;
+      artVoice.classList.add('spike');
+      setTimeout(() => {
+        artVoice.classList.remove('spike');
+        isSpiking = false;
+      }, 1500);
+    });
+  }
+
+  // VerifLink Scanner Diagnostic
+  const artPhishing = document.querySelector('.art-phishing');
+  if (artPhishing) {
+    const scanResult = artPhishing.querySelector('.scan-result');
+    const confidence = artPhishing.querySelector('.confidence');
+    let isScanning = false;
+    
+    artPhishing.addEventListener('click', () => {
+      if (isScanning) return;
+      isScanning = true;
+      artPhishing.classList.add('scanning');
+      scanResult.textContent = 'SCANNING...';
+      confidence.textContent = 'HEURISTICS RUNNING';
+      
+      setTimeout(() => {
+        scanResult.textContent = 'MALICIOUS (99.8%)';
+        confidence.textContent = 'IP/URL BLACKLIST MATCH';
+        
+        setTimeout(() => {
+          artPhishing.classList.remove('scanning');
+          scanResult.textContent = 'PHISHING DETECTED';
+          confidence.textContent = 'Confidence: 97.3%';
+          isScanning = false;
+        }, 1500);
+      }, 1500);
+    });
+  }
+
+  // Frog Compiler Compile trigger
+  const artCompiler = document.querySelector('.art-compiler');
+  if (artCompiler) {
+    let isCompiling = false;
+    artCompiler.addEventListener('click', () => {
+      if (isCompiling) return;
+      isCompiling = true;
+      artCompiler.classList.add('compiling');
+      setTimeout(() => {
+        artCompiler.classList.remove('compiling');
+        isCompiling = false;
+      }, 1600);
+    });
+  }
 
 
   // ── SMOOTH SCROLL ───────────────────────────────────────────────────────
