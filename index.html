@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=5" />
+  <title>Razane Siguerdidjane — Cybersecurity Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="nav-logo">RS<span class="logo-line"></span></a>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas id="matrixCanvas"></canvas>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="blink-dot"></span>
+        <span>Cybersecurity Engineer · Oran, Algeria</span>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="line-wrap"><span class="reveal-line">RAZANE</span></span>
+        <span class="line-wrap"><span class="reveal-line delay-1">SIGUER<em>—</em></span></span>
+        <span class="line-wrap"><span class="reveal-line delay-2">DIDJANE</span></span>
+      </h1>
+
+      <div class="hero-bottom">
+        <p class="hero-sub reveal-fade">Defending the digital frontier —<br>one layer at a time.</p>
+        <a href="#projects" class="hero-cta reveal-fade delay-1">
+          <span>View Projects</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item reveal-fade delay-2">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal-fade delay-3">
+        <span class="stat-num">AWS</span>
+        <span class="stat-label">Certified</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal-fade delay-4">
+        <span class="stat-num">DZ</span>
+        <span class="stat-label">Algeria</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line-anim"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE BAND -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>Cryptography</span><span class="sep">/</span>
+      <span>Network Security</span><span class="sep">/</span>
+      <span>Digital Forensics</span><span class="sep">/</span>
+      <span>Authentication</span><span class="sep">/</span>
+      <span>Cloud Security</span><span class="sep">/</span>
+      <span>Phishing Detection</span><span class="sep">/</span>
+      <span>Cryptography</span><span class="sep">/</span>
+      <span>Network Security</span><span class="sep">/</span>
+      <span>Digital Forensics</span><span class="sep">/</span>
+      <span>Authentication</span><span class="sep">/</span>
+      <span>Cloud Security</span><span class="sep">/</span>
+      <span>Phishing Detection</span><span class="sep">/</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-left">
+        <div class="section-eyebrow">/ 01 — About</div>
+        <div class="about-portrait">
+          <div class="portrait-placeholder">
+            <div class="portrait-initials">RS</div>
+            <div class="portrait-scan"></div>
+            <div class="portrait-corner tl"></div>
+            <div class="portrait-corner tr"></div>
+            <div class="portrait-corner bl"></div>
+            <div class="portrait-corner br"></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <h2 class="about-heading reveal">
+          <span>WHO</span>
+          <em>AM I</em>
+        </h2>
+        <p class="about-intro reveal">I'm a <strong>cybersecurity engineering student</strong> at the University of Oran, Algeria — building skills at the intersection of security, systems, and software.</p>
+        <p class="about-body reveal">My passion lives in <mark>digital forensics</mark> and <mark>network security</mark> — understanding how attackers think so defenders can stay one step ahead. I design and build security tools that solve real problems: encrypted messaging, biometric authentication, phishing detection engines.</p>
+        <p class="about-body reveal">When I'm not hunting vulnerabilities, I'm architecting systems that keep data safe — layering cryptography, authentication, and cloud infrastructure into resilient solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="skills-header">
+      <div class="section-eyebrow">/ 02 — Skills</div>
+      <h2 class="skills-title reveal">
+        TECHNICAL<br><span class="stroke-text">ARSENAL</span>
+      </h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-num">01</div>
+        <h3>Cryptography</h3>
+        <p>Symmetric & asymmetric encryption, hashing algorithms, key exchange protocols, digital signatures</p>
+        <div class="skill-tags"><span>AES</span><span>RSA</span><span>SHA</span><span>PKI</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">02</div>
+        <h3>Network Security</h3>
+        <p>Traffic analysis, intrusion detection, firewall configuration, VPN, packet inspection</p>
+        <div class="skill-tags"><span>Wireshark</span><span>Nmap</span><span>IDS/IPS</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">03</div>
+        <h3>Digital Forensics</h3>
+        <p>Incident response, memory forensics, log analysis, evidence preservation, timeline reconstruction</p>
+        <div class="skill-tags"><span>Autopsy</span><span>Volatility</span><span>OSINT</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">04</div>
+        <h3>Cloud Security</h3>
+        <p>AWS infrastructure security, IAM policies, secure architectures, compliance monitoring</p>
+        <div class="skill-tags"><span>AWS</span><span>IAM</span><span>S3</span><span>VPC</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">05</div>
+        <h3>Biometric Auth</h3>
+        <p>Voice recognition systems, keystroke dynamics analysis, behavioral biometrics</p>
+        <div class="skill-tags"><span>Python</span><span>ML</span><span>NLP</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-num">06</div>
+        <h3>Development</h3>
+        <p>Full-stack web apps with security built-in, API design, secure coding practices</p>
+        <div class="skill-tags"><span>Python</span><span>JS</span><span>HTML/CSS</span><span>C</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="projects-header">
+      <div class="section-eyebrow">/ 03 — Projects</div>
+      <h2 class="projects-title reveal">
+        SELECTED<br><span class="stroke-text">WORK</span>
+      </h2>
+    </div>
+
+    <div class="projects-list">
+
+      <!-- PROJECT 1 -->
+      <div class="project-item reveal" data-num="01">
+        <div class="project-num-bg">01</div>
+        <div class="project-inner">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-tag">Cryptography · Web App</span>
+            </div>
+            <h3 class="project-title">CRYPTOX</h3>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">A comprehensive cryptography toolkit featuring multi-algorithm encryption, file hashing, password strength analysis, and a <strong>secure messaging platform</strong> — all in one interface.</p>
+            <div class="project-features">
+              <span>Secure Messaging</span>
+              <span>File Hashing</span>
+              <span>Password Analysis</span>
+              <span>Multi-algo Encryption</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/razaneSi/Cryptox" target="_blank" rel="noopener" class="project-link">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+            <span class="project-collab">Binôme Project</span>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="project-art art-crypto">
+            <div class="hex-grid">
+              <span>A3F</span><span>7C2</span><span>E91</span>
+              <span>B4D</span><span>0F8</span><span>5A6</span>
+              <span>2E3</span><span>9B1</span><span>C47</span>
+            </div>
+            <div class="art-label">ENCRYPTED</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-item reveal" data-num="02">
+        <div class="project-num-bg">02</div>
+        <div class="project-inner">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-tag">Authentication · ML</span>
+            </div>
+            <h3 class="project-title">VOXKEY</h3>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">A dual-layer biometric authentication system combining <strong>voice recognition</strong> with <strong>keyboard typing pattern analysis</strong>. Leverages behavioral biometrics to create a unique user fingerprint.</p>
+            <div class="project-features">
+              <span>Voice Auth</span>
+              <span>Keystroke Dynamics</span>
+              <span>Behavioral Biometrics</span>
+              <span>ML Pipeline</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/razaneSi/VoxKey" target="_blank" rel="noopener" class="project-link">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+            <span class="project-collab">Binôme Project</span>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="project-art art-voice">
+            <div class="waveform">
+              <span style="--h:20%"></span><span style="--h:60%"></span><span style="--h:40%"></span>
+              <span style="--h:90%"></span><span style="--h:55%"></span><span style="--h:75%"></span>
+              <span style="--h:30%"></span><span style="--h:85%"></span><span style="--h:45%"></span>
+              <span style="--h:65%"></span><span style="--h:50%"></span><span style="--h:35%"></span>
+            </div>
+            <div class="art-label">VOICE PATTERN</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-item reveal" data-num="03">
+        <div class="project-num-bg">03</div>
+        <div class="project-inner">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-tag">Threat Detection · Solo</span>
+            </div>
+            <h3 class="project-title">VERIFLINK</h3>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">An intelligent <strong>phishing URL detection system</strong> that analyzes URLs through multiple heuristics and machine learning to identify malicious links in real-time — protecting users before they click.</p>
+            <div class="project-features">
+              <span>URL Analysis</span>
+              <span>Phishing Detection</span>
+              <span>Heuristic Engine</span>
+              <span>Real-time</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/razaneSi/VerifLink" target="_blank" rel="noopener" class="project-link">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+            <span class="project-collab">Solo Project</span>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="project-art art-phishing">
+            <div class="url-scan">
+              <div class="url-bar">
+                <div class="url-danger-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 13H1L7 1Z" stroke="#ff003c" stroke-width="1.2"/><path d="M7 5V8" stroke="#ff003c" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="10.5" r="0.5" fill="#ff003c"/></svg>
+                </div>
+                <span class="url-text">https://suspicious-site.xyz/phish...</span>
+              </div>
+              <div class="scan-result">PHISHING DETECTED</div>
+              <div class="confidence">Confidence: 97.3%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-item reveal" data-num="04">
+        <div class="project-num-bg">04</div>
+        <div class="project-inner">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-tag">Compilers · Systems</span>
+            </div>
+            <h3 class="project-title">FROG COMPILER</h3>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">A complete <strong>compiler implementation</strong> for the Frog programming language — covering lexical analysis, parsing, semantic analysis, and code generation. A deep dive into how languages work under the hood.</p>
+            <div class="project-features">
+              <span>Lexer</span>
+              <span>Parser</span>
+              <span>Semantic Analysis</span>
+              <span>Code Gen</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/razaneSi/Frog-Compiler" target="_blank" rel="noopener" class="project-link">
+              GitHub
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+            <span class="project-collab">Binôme Project</span>
+          </div>
+        </div>
+        <div class="project-visual">
+          <div class="project-art art-compiler">
+            <div class="code-snippet">
+              <div class="code-line"><span class="kw">func</span> <span class="fn">encrypt</span>(msg) {</div>
+              <div class="code-line indent"><span class="kw">let</span> key = <span class="str">generate()</span>;</div>
+              <div class="code-line indent"><span class="kw">return</span> AES(msg, key);</div>
+              <div class="code-line">}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="projects-cta">
+      <a href="https://github.com/razaneSi" target="_blank" rel="noopener" class="github-btn reveal">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        See All Projects on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials" id="credentials">
+    <div class="credentials-inner">
+      <div class="cred-left">
+        <div class="section-eyebrow">/ 04 — Credentials</div>
+        <h2 class="cred-title reveal">
+          CERTIFICATIONS<br><span class="stroke-text">&amp; TRAINING</span>
+        </h2>
+        <div class="badge-showcase reveal">
+          <div class="badge-glow"></div>
+          <img src="aws-academy-graduate-cloud-foundations-training-bad.png" alt="AWS Academy Cloud Foundations Trained Badge" class="badge-img" />
+          <div class="badge-info">
+            <h3>AWS Academy Cloud Foundations</h3>
+            <p>Amazon Web Services</p>
+            <span class="badge-status">Trained</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cred-right">
+        <div class="edu-item reveal">
+          <div class="edu-line"></div>
+          <div class="edu-content">
+            <div class="edu-year">Current</div>
+            <h4>Computer Science — Cybersecurity Engineering</h4>
+            <p>University of Oran · Oran, Algeria</p>
+            <span class="edu-status">Enrolled</span>
+          </div>
+        </div>
+
+        <div class="expertise-areas reveal">
+          <div class="section-eyebrow small">Areas of Expertise</div>
+          <div class="area-list">
+            <div class="area-item"><span class="area-dot"></span><span>Digital Forensics &amp; Incident Response</span></div>
+            <div class="area-item"><span class="area-dot"></span><span>Network Security &amp; Traffic Analysis</span></div>
+            <div class="area-item"><span class="area-dot"></span><span>Cryptographic Systems Design</span></div>
+            <div class="area-item"><span class="area-dot"></span><span>Biometric Authentication Systems</span></div>
+            <div class="area-item"><span class="area-dot"></span><span>Cloud Security (AWS)</span></div>
+            <div class="area-item"><span class="area-dot"></span><span>Threat Detection &amp; Analysis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-eyebrow">/ 05 — Contact</div>
+      <div class="contact-main">
+        <h2 class="contact-big reveal">LET'S<br>CONNECT</h2>
+        <div class="contact-right">
+          <p class="reveal">Open to internships, collaborations, and security research opportunities. Let's build something secure together.</p>
+          <div class="contact-links reveal">
+            <a href="https://github.com/razaneSi" target="_blank" rel="noopener" class="contact-link">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub — razaneSi
+              <svg class="link-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+            <a href="mailto:razane@example.com" class="contact-link">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              Email Me
+              <svg class="link-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H2.5M11 1V9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+            </a>
+          </div>
+          <div class="contact-meta reveal">
+            <span class="meta-loc">Oran, Algeria</span>
+            <span class="meta-status"><span class="status-pulse"></span> Available for opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-left">
+        <span class="footer-name">RAZANE SIGUERDIDJANE</span>
+      </div>
+      <div class="footer-right">
+        <span>© 2026 · Cybersecurity Engineer</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
