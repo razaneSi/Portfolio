@@ -969,6 +969,7 @@ mark {
 .projects-list {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-item {
@@ -1133,7 +1134,9 @@ mark {
   opacity: 0.5;
 }
 
-/* Project Art */
+/* ============================
+   PROJECT ART — base styles
+   ============================ */
 .project-visual {
   display: flex;
   align-items: center;
@@ -1148,15 +1151,71 @@ mark {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-start;
   position: relative;
   background: var(--bg-2);
-  transition: border-color 0.35s, transform 0.35s;
+  transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
+  cursor: pointer;
 }
 
 .project-item:hover .project-art {
   border-color: rgba(200, 241, 53, 0.2);
+}
+
+.project-art:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(210, 255, 0, 0.15);
+}
+
+/* Terminal header strip */
+.art-terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.art-terminal-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: artPulse 1.5s infinite;
+}
+
+@keyframes artPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.art-terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--fg-mid);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Art content areas — all centered */
+.art-content-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
 .art-label {
@@ -1171,9 +1230,10 @@ mark {
   color: var(--fg-dim);
   opacity: 0.5;
   white-space: nowrap;
+  pointer-events: none;
 }
 
-/* Crypto art */
+/* ── Crypto art ─────────────────────────────── */
 .art-crypto {
   background: radial-gradient(ellipse at center, rgba(200, 241, 53, 0.04) 0%, transparent 70%);
 }
@@ -1186,7 +1246,6 @@ mark {
   font-family: var(--font-mono);
   font-size: 0.95rem;
   color: var(--accent);
-  opacity: 0.45;
   letter-spacing: 0.08em;
 }
 
@@ -1195,37 +1254,15 @@ mark {
   animation: hexFlicker 4s infinite;
 }
 
-.hex-grid span:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.hex-grid span:nth-child(3) {
-  animation-delay: 0.8s;
-}
-
-.hex-grid span:nth-child(4) {
-  animation-delay: 1.2s;
-}
-
-.hex-grid span:nth-child(5) {
-  animation-delay: 0.6s;
-}
-
-.hex-grid span:nth-child(6) {
-  animation-delay: 1.6s;
-}
-
-.hex-grid span:nth-child(7) {
-  animation-delay: 0.2s;
-}
-
-.hex-grid span:nth-child(8) {
-  animation-delay: 1.0s;
-}
-
-.hex-grid span:nth-child(9) {
-  animation-delay: 1.4s;
-}
+.hex-grid span:nth-child(1) { animation-delay: 0s; }
+.hex-grid span:nth-child(2) { animation-delay: 0.4s; }
+.hex-grid span:nth-child(3) { animation-delay: 0.8s; }
+.hex-grid span:nth-child(4) { animation-delay: 1.2s; }
+.hex-grid span:nth-child(5) { animation-delay: 0.6s; }
+.hex-grid span:nth-child(6) { animation-delay: 1.6s; }
+.hex-grid span:nth-child(7) { animation-delay: 0.2s; }
+.hex-grid span:nth-child(8) { animation-delay: 1.0s; }
+.hex-grid span:nth-child(9) { animation-delay: 1.4s; }
 
 @keyframes hexFlicker {
 
@@ -1240,7 +1277,7 @@ mark {
   }
 }
 
-/* Voice art */
+/* ── Voice art ──────────────────────────────── */
 .art-voice {
   background: radial-gradient(ellipse at center, rgba(0, 85, 255, 0.07) 0%, transparent 70%);
 }
@@ -1256,59 +1293,24 @@ mark {
 .waveform span {
   display: block;
   width: 3px;
-  height: var(--h);
+  height: var(--h, 40%);
   background: var(--accent-2);
   border-radius: 2px;
   animation: wave 1.6s ease-in-out infinite;
 }
 
-.waveform span:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.waveform span:nth-child(2) {
-  animation-delay: .1s;
-}
-
-.waveform span:nth-child(3) {
-  animation-delay: .2s;
-}
-
-.waveform span:nth-child(4) {
-  animation-delay: .3s;
-}
-
-.waveform span:nth-child(5) {
-  animation-delay: .4s;
-}
-
-.waveform span:nth-child(6) {
-  animation-delay: .5s;
-}
-
-.waveform span:nth-child(7) {
-  animation-delay: .6s;
-}
-
-.waveform span:nth-child(8) {
-  animation-delay: .7s;
-}
-
-.waveform span:nth-child(9) {
-  animation-delay: .8s;
-}
-
-.waveform span:nth-child(10) {
-  animation-delay: .9s;
-}
-
-.waveform span:nth-child(11) {
-  animation-delay: 1s;
-}
-
-.waveform span:nth-child(12) {
-  animation-delay: 1.1s;
-}
+.waveform span:nth-child(1)  { animation-delay: 0s; }
+.waveform span:nth-child(2)  { animation-delay: .1s; }
+.waveform span:nth-child(3)  { animation-delay: .2s; }
+.waveform span:nth-child(4)  { animation-delay: .3s; }
+.waveform span:nth-child(5)  { animation-delay: .4s; }
+.waveform span:nth-child(6)  { animation-delay: .5s; }
+.waveform span:nth-child(7)  { animation-delay: .6s; }
+.waveform span:nth-child(8)  { animation-delay: .7s; }
+.waveform span:nth-child(9)  { animation-delay: .8s; }
+.waveform span:nth-child(10) { animation-delay: .9s; }
+.waveform span:nth-child(11) { animation-delay: 1s; }
+.waveform span:nth-child(12) { animation-delay: 1.1s; }
 
 @keyframes wave {
 
@@ -1322,14 +1324,14 @@ mark {
   }
 }
 
-/* Phishing art */
+/* ── Phishing art ───────────────────────────── */
 .art-phishing {
-  padding: 1.5rem;
   background: radial-gradient(ellipse at center, rgba(255, 28, 60, 0.05) 0%, transparent 70%);
 }
 
 .url-scan {
   width: 100%;
+  padding: 0 1.5rem;
 }
 
 .url-bar {
@@ -1387,9 +1389,8 @@ mark {
   text-align: center;
 }
 
-/* Compiler art */
+/* ── Compiler art ───────────────────────────── */
 .art-compiler {
-  padding: 1.5rem;
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -1399,6 +1400,7 @@ mark {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   line-height: 1.9;
+  padding: 0.8rem 1.2rem;
 }
 
 .code-line {
@@ -1985,73 +1987,8 @@ mark {
 }
 
 /* ============================
-   PROJECTS INTERACTION STYLING
+   PROJECT INTERACTION STATES
    ============================ */
-.project-art {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s, box-shadow 0.3s;
-}
-
-.project-art:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 30px rgba(210, 255, 0, 0.15);
-}
-
-.art-terminal-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0.5rem 0.8rem;
-  background: rgba(0, 0, 0, 0.25);
-  border-bottom: 1px solid var(--border);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.art-terminal-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: artPulse 1.5s infinite;
-}
-
-@keyframes artPulse {
-
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.art-terminal-title {
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  color: var(--fg-mid);
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-
-.art-crypto .hex-grid,
-.art-voice .waveform,
-.art-phishing .url-scan,
-.art-compiler .code-snippet {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-}
 
 /* Cryptox Interactive Decrypt */
 .art-crypto.decrypted .hex-grid span {
@@ -2064,7 +2001,7 @@ mark {
   color: var(--accent);
 }
 
-/* VoxKey Interactive Waveform Spike */
+/* VoxKey Waveform Spike */
 .art-voice.spike .waveform span {
   animation: waveSpike 0.4s ease-in-out infinite alternate !important;
   background: var(--accent) !important;
@@ -2080,7 +2017,7 @@ mark {
   }
 }
 
-/* VerifLink Interactive Scanning Log */
+/* VerifLink Scanning */
 .art-phishing.scanning {
   background: radial-gradient(ellipse at center, rgba(210, 255, 0, 0.12) 0%, transparent 70%);
 }
@@ -2109,7 +2046,7 @@ mark {
   }
 }
 
-/* Frog Compiler Compiling state */
+/* Frog Compiler Compiling */
 .art-compiler.compiling {
   border-color: var(--accent);
 }
@@ -2156,4 +2093,268 @@ mark {
   .languages-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================
+   CRYPTOX THEME
+   Per-project scroll-driven theme system.
+   Project 01 (CryptoX) activates a deep violet palette
+   when scrolled into view via IntersectionObserver.
+   ============================ */
+
+/* ── Base: smooth transition prep ────────────────────── */
+.project-item[data-num="01"] {
+  transition:
+    background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-top-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Ambient glow layer (::before) ───────────────────── */
+.project-item[data-num="01"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 75%, rgba(168, 85, 247, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(88, 28, 135, 0.05) 0%, transparent 80%);
+}
+
+/* ── Particle layer (::after) ────────────────────────── */
+/* NOTE: Only defined ONCE — no duplicate selector */
+.project-item[data-num="01"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%,  rgba(168, 85, 247, 0.4) 50%, transparent 50%),
+    radial-gradient(1px 1px at 30% 45%,  rgba(139, 92, 246, 0.3) 50%, transparent 50%),
+    radial-gradient(1px 1px at 55% 25%,  rgba(192, 132, 252, 0.35) 50%, transparent 50%),
+    radial-gradient(1px 1px at 70% 65%,  rgba(168, 85, 247, 0.25) 50%, transparent 50%),
+    radial-gradient(1px 1px at 85% 35%,  rgba(139, 92, 246, 0.4) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 20% 70%, rgba(192, 132, 252, 0.2) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 85%,  rgba(168, 85, 247, 0.3) 50%, transparent 50%),
+    radial-gradient(1px 1px at 90% 10%,  rgba(139, 92, 246, 0.35) 50%, transparent 50%);
+  opacity: 0;
+  transition: opacity 1.2s ease 0.3s;
+  animation: cryptoxParticleDrift 20s linear infinite;
+}
+
+@keyframes cryptoxParticleDrift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+
+/* ── THEME ACTIVE ─────────────────────────────────────── */
+.project-item.cryptox-theme {
+  background: #0c0a1a;
+  border-top-color: rgba(139, 92, 246, 0.2);
+  border-bottom-color: rgba(139, 92, 246, 0.2);
+}
+
+/* Reveal pseudo-layers when theme is active */
+.project-item.cryptox-theme::before {
+  opacity: 1;
+}
+
+.project-item.cryptox-theme::after {
+  opacity: 1;
+}
+
+/* Lift all direct children above pseudo-elements */
+.project-item.cryptox-theme > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover background */
+.project-item.cryptox-theme:hover {
+  background: rgba(20, 14, 50, 0.95);
+}
+
+/* Watermark number */
+.project-item.cryptox-theme .project-num-bg {
+  -webkit-text-stroke-color: rgba(139, 92, 246, 0.08);
+}
+
+.project-item.cryptox-theme:hover .project-num-bg {
+  -webkit-text-stroke-color: rgba(168, 85, 247, 0.18);
+}
+
+/* Title */
+.project-item.cryptox-theme .project-title {
+  color: var(--fg);
+  text-align: center;
+}
+
+.project-item.cryptox-theme:hover .project-title {
+  color: #a78bfa;
+}
+
+/* Tag */
+.project-item.cryptox-theme .project-tag {
+  color: rgba(192, 132, 252, 0.55);
+  
+}
+
+/* Description */
+.project-item.cryptox-theme .project-desc {
+  color: rgba(203, 213, 225, 0.65);
+  text-align: center;
+}
+
+.project-item.cryptox-theme .project-desc strong {
+  color: rgba(226, 232, 240, 0.85);
+  text-align: center;
+}
+
+/* Feature pills */
+.project-item.cryptox-theme .project-features span {
+  border-color: rgba(139, 92, 246, 0.22);
+  color: rgba(192, 132, 252, 0.55);
+  text-align: center;
+}
+
+.project-item.cryptox-theme:hover .project-features span {
+  border-color: rgba(168, 85, 247, 0.45);
+  color: #c084fc;
+  background: rgba(139, 92, 246, 0.07);
+}
+
+/* Link */
+.project-item.cryptox-theme .project-link {
+  color: #a78bfa;
+  text-align: center;
+}
+
+.project-item.cryptox-theme .project-link:hover {
+  border-color: #a78bfa;
+  color: #c4b5fd;
+}
+
+/* Collab */
+.project-item.cryptox-theme .project-collab {
+  color: rgba(192, 132, 252, 0.35);
+}
+
+/* ── Art card under CryptoX theme ─────────────────────── */
+.project-item.cryptox-theme .project-art {
+  background: rgba(15, 12, 35, 0.9);
+  border-color: rgba(139, 92, 246, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.project-item.cryptox-theme .project-art:hover {
+  border-color: rgba(168, 85, 247, 0.55);
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.22),
+    0 0 60px rgba(139, 92, 246, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.project-item.cryptox-theme .art-terminal-header {
+  background: rgba(88, 28, 135, 0.18);
+  border-bottom-color: rgba(139, 92, 246, 0.18);
+}
+
+.project-item.cryptox-theme .art-terminal-dot {
+  background: #a78bfa;
+}
+
+.project-item.cryptox-theme .art-terminal-title {
+  color: rgba(192, 132, 252, 0.65);
+}
+
+.project-item.cryptox-theme .art-label {
+  color: rgba(168, 85, 247, 0.55);
+}
+
+/* Hex grid — purple variant */
+.project-item.cryptox-theme .art-crypto {
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+}
+
+.project-item.cryptox-theme .hex-grid {
+  color: #a78bfa;
+}
+
+@keyframes hexFlickerPurple {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.92; color: #e9d5ff; }
+}
+
+.project-item.cryptox-theme .hex-grid span {
+  animation-name: hexFlickerPurple;
+}
+
+/* Decrypted state under CryptoX */
+.project-item.cryptox-theme .art-crypto.decrypted .hex-grid span {
+  color: #e9d5ff;
+  text-shadow: 0 0 12px #a78bfa;
+  animation: none;
+}
+
+.project-item.cryptox-theme .art-crypto.decrypted .art-label {
+  color: #a78bfa;
+}
+
+/* ── Center all CryptoX content ───────────────────────── */
+.project-item.cryptox-theme .project-content,
+.project-item.cryptox-theme .project-info {
+  text-align: center;
+  align-items: center;
+}
+
+/* Title */
+.project-item.cryptox-theme .project-title {
+  color: var(--fg);
+  text-align: center;
+}
+
+/* Tag */
+.project-item.cryptox-theme .project-tag {
+  color: rgba(192, 132, 252, 0.55);
+  text-align: center;
+}
+
+/* Description */
+.project-item.cryptox-theme .project-desc {
+  color: rgba(203, 213, 225, 0.65);
+  text-align: center;
+}
+
+.project-item.cryptox-theme .project-desc strong {
+  color: rgba(226, 232, 240, 0.85);
+}
+
+/* Features container */
+.project-item.cryptox-theme .project-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-item.cryptox-theme .project-features span {
+  border-color: rgba(139, 92, 246, 0.22);
+  color: rgba(192, 132, 252, 0.55);
+}
+
+/* Link */
+.project-item.cryptox-theme .project-link {
+  color: #a78bfa;
+  text-align: center;
+}
+
+/* Collaboration text */
+.project-item.cryptox-theme .project-collab {
+  color: rgba(192, 132, 252, 0.35);
+  text-align: center;
 }

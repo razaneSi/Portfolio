@@ -309,4 +309,24 @@
     }
   });
 
+
+  // ── CRYPTOX THEME — CryptoX Project Item Theme Switch ───────────────────
+  const cryptoxItem = document.querySelector('.project-item[data-num="01"]');
+  if (cryptoxItem) {
+    const cryptoxObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cryptoxItem.classList.add('cryptox-theme');
+        } else {
+          cryptoxItem.classList.remove('cryptox-theme');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -5% 0px'
+    });
+
+    cryptoxObserver.observe(cryptoxItem);
+  }
+
 })();
