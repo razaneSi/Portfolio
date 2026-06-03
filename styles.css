@@ -2358,3 +2358,480 @@ mark {
   color: rgba(192, 132, 252, 0.35);
   text-align: center;
 }
+/* ============================
+   VOXKEY THEME
+   Project 02 — teal/cyan biometric palette
+   Activates via IntersectionObserver (voxkey-theme class)
+   ============================ */
+
+/* ── Transition prep ─────────────────────────────────── */
+.project-item[data-num="02"] {
+  transition:
+    background 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-top-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Ambient glow layer (::before) ───────────────────── */
+.project-item[data-num="02"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(0, 229, 160, 0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 75%, rgba(0, 200, 150, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0, 100, 80, 0.05) 0%, transparent 80%);
+}
+
+/* ── Grid overlay (::after) ──────────────────────────── */
+.project-item[data-num="02"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 229, 160, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 160, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0;
+  transition: opacity 1.2s ease 0.3s;
+}
+
+/* ── THEME ACTIVE ─────────────────────────────────────── */
+.project-item.voxkey-theme {
+  background: #060d0d;
+  border-top-color: rgba(0, 229, 160, 0.18);
+  border-bottom-color: rgba(0, 229, 160, 0.18);
+}
+
+.project-item.voxkey-theme::before { opacity: 1; }
+.project-item.voxkey-theme::after  { opacity: 1; }
+
+/* Lift children above pseudo-elements */
+.project-item.voxkey-theme > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover background */
+.project-item.voxkey-theme:hover {
+  background: rgba(6, 20, 18, 0.97);
+}
+
+/* Watermark number */
+.project-item.voxkey-theme .project-num-bg {
+  -webkit-text-stroke-color: rgba(0, 229, 160, 0.06);
+}
+.project-item.voxkey-theme:hover .project-num-bg {
+  -webkit-text-stroke-color: rgba(0, 229, 160, 0.14);
+}
+
+/* Title */
+.project-item.voxkey-theme .project-title {
+  color: var(--fg);
+}
+.project-item.voxkey-theme:hover .project-title {
+  color: #00e5a0;
+}
+
+/* Tag */
+.project-item.voxkey-theme .project-tag {
+  color: rgba(0, 200, 150, 0.55);
+}
+
+/* Description */
+.project-item.voxkey-theme .project-desc {
+  color: rgba(180, 220, 210, 0.65);
+}
+.project-item.voxkey-theme .project-desc strong {
+  color: rgba(210, 240, 230, 0.85);
+}
+
+/* Feature pills */
+.project-item.voxkey-theme .project-features span {
+  border-color: rgba(0, 229, 160, 0.2);
+  color: rgba(0, 200, 150, 0.55);
+}
+.project-item.voxkey-theme:hover .project-features span {
+  border-color: rgba(0, 229, 160, 0.45);
+  color: #00e5a0;
+  background: rgba(0, 229, 160, 0.06);
+}
+
+/* Link */
+.project-item.voxkey-theme .project-link {
+  color: #00e5a0;
+}
+.project-item.voxkey-theme .project-link:hover {
+  border-color: #00e5a0;
+  color: #5fffc8;
+}
+
+/* Collab */
+.project-item.voxkey-theme .project-collab {
+  color: rgba(0, 200, 150, 0.3);
+}
+
+/* ── Art card under VoxKey theme ─────────────────────── */
+.project-item.voxkey-theme .project-art {
+  background: rgba(4, 14, 12, 0.92);
+  border-color: rgba(0, 229, 160, 0.22);
+  backdrop-filter: blur(12px);
+}
+.project-item.voxkey-theme .project-art:hover {
+  border-color: rgba(0, 229, 160, 0.55);
+  box-shadow:
+    0 0 30px rgba(0, 229, 160, 0.18),
+    0 0 60px rgba(0, 229, 160, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Terminal header */
+.project-item.voxkey-theme .art-terminal-header {
+  background: rgba(0, 80, 60, 0.18);
+  border-bottom-color: rgba(0, 229, 160, 0.15);
+}
+.project-item.voxkey-theme .art-terminal-dot {
+  background: #00e5a0;
+  box-shadow: 0 0 6px rgba(0, 229, 160, 0.7);
+}
+.project-item.voxkey-theme .art-terminal-title {
+  color: rgba(0, 200, 150, 0.65);
+}
+.project-item.voxkey-theme .art-label {
+  color: rgba(0, 200, 150, 0.5);
+}
+
+/* Waveform — teal variant */
+.project-item.voxkey-theme .art-voice {
+  background: radial-gradient(ellipse at center, rgba(0, 229, 160, 0.08) 0%, transparent 70%);
+}
+.project-item.voxkey-theme .waveform span {
+  background: #00c896;
+  box-shadow: 0 0 4px rgba(0, 229, 160, 0.3);
+}
+
+/* Spike state under VoxKey */
+.project-item.voxkey-theme .art-voice.spike .waveform span {
+  background: #00ffbc !important;
+  box-shadow: 0 0 8px rgba(0, 255, 188, 0.6) !important;
+}
+
+/* Art label during spike */
+.project-item.voxkey-theme .art-voice.spike .art-label {
+  color: #00e5a0;
+}
+/* ── Center all text content ─────────────────────────── */
+.project-item.voxkey-theme {
+  text-align: center;
+}
+
+.project-item.voxkey-theme .project-content,
+.project-item.voxkey-theme .project-info,
+.project-item.voxkey-theme .project-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Center feature pills */
+.project-item.voxkey-theme .project-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Center link button */
+.project-item.voxkey-theme .project-link {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center collaboration text */
+.project-item.voxkey-theme .project-collab {
+  text-align: center;
+}
+/* ============================
+   VERIFLINK THEME
+   Project 03 — tri-panel scroll theme
+   3 vertical sections: light · dark-blue · dark-purple
+   ============================ */
+
+/* ── Transition prep ────────────────────────────────── */
+.project-item[data-num="03"] {
+  transition:
+    background 0.8s cubic-bezier(0.4,0,0.2,1),
+    border-top-color 0.8s cubic-bezier(0.4,0,0.2,1),
+    border-bottom-color 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── Ambient glow ::before ──────────────────────────── */
+.project-item[data-num="03"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 38% 70% at 17% 50%, rgba(91,111,204,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 38% 70% at 50% 50%, rgba(76,100,194,0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 38% 70% at 83% 50%, rgba(125,79,170,0.10) 0%, transparent 70%);
+}
+
+/* ── Vertical divider lines ::after ─────────────────── */
+.project-item[data-num="03"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease 0.3s;
+}
+
+/* ── THEME ACTIVE ───────────────────────────────────── */
+.project-item.veriflink-theme {
+  background: linear-gradient(
+    to right,
+    #EDEFF9 0% 33%,
+    #070F2A 33% 66%,
+    #150A20 66% 100%
+  );
+  border-top-color: rgba(120,80,200,0.22);
+  border-bottom-color: rgba(91,111,204,0.18);
+}
+
+.project-item.veriflink-theme::before { opacity: 1; }
+.project-item.veriflink-theme::after  { opacity: 1; }
+
+.project-item.veriflink-theme > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text must be readable over the split background */
+.project-item.veriflink-theme .project-title,
+.project-item.veriflink-theme .project-desc,
+.project-item.veriflink-theme .project-tag,
+.project-item.veriflink-theme .project-features span,
+.project-item.veriflink-theme .project-collab {
+  position: relative;
+  z-index: 2;
+}
+.project-item.veriflink-theme .project-title { color: var(--fg); }
+.project-item.veriflink-theme:hover .project-title { color: #9a68c8; }
+.project-item.veriflink-theme .project-tag { color: rgba(154,104,200,0.65); }
+.project-item.veriflink-theme .project-desc { color: rgba(110, 104, 141, 0.941); }
+.project-item.veriflink-theme .project-desc strong { color: rgba(98, 72, 230, 0.9); }
+.project-item.veriflink-theme .project-features span {
+  border-color: rgba(120,80,220,0.25);
+  color: rgba(160,130,255,0.65);
+}
+.project-item.veriflink-theme:hover .project-features span {
+  border-color: rgba(154,104,200,0.55);
+  color: #b39dff;
+  background: rgba(120,80,255,0.07);
+}
+.project-item.veriflink-theme .project-link { color: #9a68c8; }
+.project-item.veriflink-theme .project-link:hover { border-color: #9a68c8; color: #c4b5fd; }
+.project-item.veriflink-theme .project-collab { color: rgba(164, 128, 198, 0.678); }
+.project-item.veriflink-theme .project-num-bg { -webkit-text-stroke-color: rgba(120,80,200,0.07); }
+.project-item.veriflink-theme:hover .project-num-bg { -webkit-text-stroke-color: rgba(120,80,200,0.17); }
+
+/* Center layout */
+.project-item.veriflink-theme { text-align: center; }
+.project-item.veriflink-theme .project-features { display:flex; justify-content:center; flex-wrap:wrap; gap:0.75rem; }
+.project-item.veriflink-theme .project-link { margin-left:auto; margin-right:auto; }
+.project-item.veriflink-theme .project-collab { text-align:center; }
+
+/* ── Art card wrapper ───────────────────────────────── */
+.project-item.veriflink-theme .project-art {
+  border-color: rgba(120,80,220,0.28);
+  background: transparent;
+  overflow: hidden;
+}
+.project-item.veriflink-theme .project-art:hover {
+  border-color: rgba(154,104,200,0.55);
+  box-shadow: 0 0 30px rgba(100,60,200,0.22), 0 0 60px rgba(80,40,160,0.08);
+}
+.project-item.veriflink-theme .art-terminal-header {
+  background: rgba(20,10,40,0.85);
+  border-bottom-color: rgba(120,80,200,0.22);
+}
+.project-item.veriflink-theme .art-terminal-dot {
+  background: #8b5cf6;
+  box-shadow: 0 0 6px rgba(139,92,246,0.75);
+}
+.project-item.veriflink-theme .art-terminal-title { color: rgba(180,150,240,0.7); }
+
+/* ── Three-panel layout ─────────────────────────────── */
+.vl-tri-art { padding-bottom: 0; }
+
+.vl-panels {
+  display: flex;
+  height: 180px;
+  overflow: hidden;
+}
+
+/* Each panel takes 1/3 */
+.vl-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 8px;
+  position: relative;
+  transition: flex 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.vl-panel:hover { flex: 1.25; }
+
+/* Dividers between panels */
+.vl-panel + .vl-panel {
+  border-left: 1px solid rgba(130,100,220,0.2);
+}
+
+/* Panel labels */
+.vl-panel-label {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
+  font-family: 'IBM Plex Mono', monospace;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Logo row */
+.vl-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.vl-logo strong { font-weight: 700; }
+
+/* Input mock */
+.vl-input-row { width: 90%; }
+.vl-input {
+  width: 100%;
+  font-size: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 4px 7px;
+  border-radius: 5px;
+  border: 1px solid;
+  opacity: 0.75;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Button mock */
+.vl-btn {
+  font-size: 8px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 5px;
+  letter-spacing: 0.04em;
+  cursor: default;
+}
+
+/* Chip */
+.vl-chip {
+  font-size: 7px;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+.vl-danger { color: #f87171; background: rgba(248,113,113,0.12); border: 1px solid rgba(248,113,113,0.25); }
+
+/* Confidence */
+.vl-conf {
+  font-size: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  opacity: 0.5;
+}
+
+/* ── Panel 1: Light ───────────────────────────────────*/
+.vl-light {
+   background: linear-gradient(90deg, #EFF1FA 50%, #A1ADE9 100%);
+  color: #1a1d3a;
+}
+.vl-light .vl-panel-label { color: #5a6080; }
+.vl-light .vl-logo { color: #1a1d3a; }
+.vl-light .vl-logo strong { color: #5B6FCC; }
+.vl-light .vl-input {
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(161,173,233,0.5);
+  color: #5a6080;
+}
+.vl-light .vl-btn {
+  background: #5B6FCC;
+  color: #fff;
+}
+.vl-light .vl-conf { color: #5a6080; }
+
+/* ── Panel 2: Dark Blue ─────────────────────────────── */
+.vl-dark-blue {
+  background: linear-gradient(90deg, #050c24 50%, #1e3a8a 100%);
+  color: #dde4f8;
+}
+.vl-dark-blue .vl-panel-label { color: #8fa5d8; }
+.vl-dark-blue .vl-logo { color: #dde4f8; }
+.vl-dark-blue .vl-logo strong { color: #6278d4; }
+.vl-dark-blue .vl-input {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(80,105,190,0.3);
+  color: #8fa5d8;
+}
+.vl-dark-blue .vl-btn {
+  background: #4c64c2;
+  color: #dde4f8;
+}
+.vl-dark-blue .vl-conf { color: #4f6299; }
+
+/* ── Panel 3: Dark Purple ───────────────────────────── */
+.vl-dark-purple {
+  background: linear-gradient(90deg, #0c0614 50%, #6b2d9a 100%);
+  color: #ecdff8;
+}
+.vl-dark-purple .vl-panel-label { color: #a882c8; }
+.vl-dark-purple .vl-logo { color: #ecdff8; }
+.vl-dark-purple .vl-logo strong { color: #9a68c8; }
+.vl-dark-purple .vl-input {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(120,75,155,0.28);
+  color: #a882c8;
+}
+.vl-dark-purple .vl-btn {
+  background: #7d4faa;
+  color: #ecdff8;
+}
+.vl-dark-purple .vl-conf { color: #6a4888; }
+
+/* Scan/clicking state — pulse all panels */
+.vl-tri-art.scanning .vl-panel { animation: vlPanelPulse 0.5s ease infinite alternate; }
+.vl-tri-art.scanning .vl-dark-blue { animation-delay: 0.1s; }
+.vl-tri-art.scanning .vl-dark-purple { animation-delay: 0.2s; }
+@keyframes vlPanelPulse {
+  from { filter: brightness(1); }
+  to   { filter: brightness(1.2); }
+}

@@ -322,11 +322,51 @@
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -5% 0px'
+      threshold: 0.10,
+      rootMargin: '0px 0px 10% 0px'
     });
 
     cryptoxObserver.observe(cryptoxItem);
+  }
+
+
+  // ── VOXKEY THEME — VoxKey Project Item Theme Switch ──────────────────────
+  const voxkeyItem = document.querySelector('.project-item[data-num="02"]');
+  if (voxkeyItem) {
+    const voxkeyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          voxkeyItem.classList.add('voxkey-theme');
+        } else {
+          voxkeyItem.classList.remove('voxkey-theme');
+        }
+      });
+    }, {
+      threshold: 0.10,
+      rootMargin: '0px 0px 10% 0px'
+    });
+
+    voxkeyObserver.observe(voxkeyItem);
+  }
+
+
+  // ── VERIFLINK THEME — VerifLink Project Item Theme Switch ────────────────
+  const veriflinkItem = document.querySelector('.project-item[data-num="03"]');
+  if (veriflinkItem) {
+    const veriflinkObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          veriflinkItem.classList.add('veriflink-theme');
+        } else {
+          veriflinkItem.classList.remove('veriflink-theme');
+        }
+      });
+    }, {
+      threshold: 0.10,
+      rootMargin: '0px 0px 10% 0px'
+    });
+
+    veriflinkObserver.observe(veriflinkItem);
   }
 
 })();
