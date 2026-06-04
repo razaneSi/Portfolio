@@ -525,13 +525,42 @@
           <div class="project-art art-compiler" data-interactive="compiler">
             <div class="art-terminal-header">
               <span class="art-terminal-dot"></span>
-              <span class="art-terminal-title">frogc.exe — Click to Compile</span>
+              <span class="art-terminal-title">Compilateur FROG — Click to Compile</span>
+              <div class="frog-menu-bar"><span>File</span><span>Run</span><span>Help</span></div>
             </div>
-            <div class="code-snippet">
-              <div class="code-line"><span class="kw">func</span> <span class="fn">encrypt</span>(msg) {</div>
-              <div class="code-line indent"><span class="kw">let</span> key = <span class="str">generate()</span>;</div>
-              <div class="code-line indent"><span class="kw">return</span> AES(msg, key);</div>
-              <div class="code-line">}</div>
+            <div class="frog-ide">
+              <div class="frog-sidebar">
+                <div class="frog-sidebar-label">Explorer</div>
+                <div class="frog-btn frog-btn-lexical">▶ Run Lexical</div>
+                <div class="frog-btn frog-btn-syntax">▶ Run Syntax</div>
+                <div class="frog-btn frog-btn-tree">🌿 Generate Tree</div>
+                <div class="frog-btn frog-btn-semantic">🌿 Run Semantic</div>
+              </div>
+              <div class="frog-editor">
+                <div class="frog-editor-top">
+                  <span class="frog-file-icon">📄</span><span class="frog-file-name">main.frog</span>
+                </div>
+                <div class="frog-code">
+                  <div class="frog-line"><span class="fkw">func</span> <span class="ffn">main</span>() {</div>
+                  <div class="frog-line frog-indent"><span class="fkw">let</span> x = <span class="fnum">42</span>;</div>
+                  <div class="frog-line frog-indent"><span class="ffn">print</span>(x);</div>
+                  <div class="frog-line">}</div>
+                </div>
+              </div>
+              <div class="frog-output">
+                <div class="frog-tabs">
+                  <span class="frog-tab">Results</span>
+                  <span class="frog-tab active">Errors</span>
+                  <span class="frog-tab">Syntaxique Tree</span>
+                </div>
+                <div class="frog-result-pane">
+                  <span class="frog-result-text">No errors found.</span>
+                </div>
+              </div>
+            </div>
+            <div class="frog-status-bar">
+              <span class="frog-status-dot"></span>
+              <span class="frog-status-msg">Ready</span>
             </div>
           </div>
         </div>

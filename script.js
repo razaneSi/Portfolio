@@ -278,13 +278,25 @@
   // Frog Compiler Compile trigger
   const artCompiler = document.querySelector('.art-compiler');
   if (artCompiler) {
+    const statusMsg = artCompiler.querySelector('.frog-status-msg');
+    const resultText = artCompiler.querySelector('.frog-result-text');
     let isCompiling = false;
     artCompiler.addEventListener('click', () => {
       if (isCompiling) return;
       isCompiling = true;
       artCompiler.classList.add('compiling');
+      if (statusMsg) statusMsg.textContent = 'Compiling...';
+      if (resultText) resultText.textContent = 'Running lexical analysis...';
+      setTimeout(() => {
+        if (resultText) resultText.textContent = 'Parsing tokens...';
+      }, 500);
+      setTimeout(() => {
+        if (resultText) resultText.textContent = 'Semantic check...';
+      }, 1000);
       setTimeout(() => {
         artCompiler.classList.remove('compiling');
+        if (statusMsg) statusMsg.textContent = 'Build succeeded';
+        if (resultText) resultText.textContent = 'No errors found.';
         isCompiling = false;
       }, 1600);
     });
@@ -367,6 +379,26 @@
     });
 
     veriflinkObserver.observe(veriflinkItem);
+  }
+
+
+  // ── FROG COMPILER THEME — Frog Compiler Project Item Theme Switch ─────────
+  const frogcompilerItem = document.querySelector('.project-item[data-num="04"]');
+  if (frogcompilerItem) {
+    const frogcompilerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          frogcompilerItem.classList.add('frogcompiler-theme');
+        } else {
+          frogcompilerItem.classList.remove('frogcompiler-theme');
+        }
+      });
+    }, {
+      threshold: 0.10,
+      rootMargin: '0px 0px 10% 0px'
+    });
+
+    frogcompilerObserver.observe(frogcompilerItem);
   }
 
 })();

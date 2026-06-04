@@ -2835,3 +2835,299 @@ mark {
   from { filter: brightness(1); }
   to   { filter: brightness(1.2); }
 }
+/* ============================
+   FROG COMPILER THEME
+   Project 04 — green/dark IDE palette (Compilateur FROG)
+   Activates via IntersectionObserver (frogcompiler-theme class)
+   ============================ */
+
+.project-item[data-num="04"] {
+  transition:
+    background 0.8s cubic-bezier(0.4,0,0.2,1),
+    border-top-color 0.8s cubic-bezier(0.4,0,0.2,1),
+    border-bottom-color 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.project-item[data-num="04"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 30%, rgba(34,197,94,0.09) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 70%, rgba(22,163,74,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(16,100,50,0.05) 0%, transparent 80%);
+}
+
+.project-item[data-num="04"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(34,197,94,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,197,94,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0;
+  transition: opacity 1.2s ease 0.3s;
+}
+
+.project-item.frogcompiler-theme {
+  background: #0d1a0e;
+  border-top-color: rgba(34,197,94,0.22);
+  border-bottom-color: rgba(34,197,94,0.18);
+}
+
+.project-item.frogcompiler-theme::before { opacity: 1; }
+.project-item.frogcompiler-theme::after  { opacity: 1; }
+
+.project-item.frogcompiler-theme > * { position: relative; z-index: 1; }
+
+.project-item.frogcompiler-theme:hover { background: rgba(10,22,11,0.98); }
+
+.project-item.frogcompiler-theme .project-num-bg { -webkit-text-stroke-color: rgba(34,197,94,0.06); }
+.project-item.frogcompiler-theme:hover .project-num-bg { -webkit-text-stroke-color: rgba(34,197,94,0.15); }
+
+.project-item.frogcompiler-theme .project-title { color: var(--fg); }
+.project-item.frogcompiler-theme:hover .project-title { color: #4ade80; }
+
+.project-item.frogcompiler-theme .project-tag { color: rgba(34,197,94,0.55); }
+
+.project-item.frogcompiler-theme .project-desc { color: rgba(180,220,190,0.65); }
+.project-item.frogcompiler-theme .project-desc strong { color: rgba(74,222,128,0.9); }
+
+.project-item.frogcompiler-theme .project-features span {
+  border-color: rgba(34,197,94,0.22);
+  color: rgba(34,197,94,0.6);
+}
+.project-item.frogcompiler-theme:hover .project-features span {
+  border-color: rgba(34,197,94,0.5);
+  color: #4ade80;
+  background: rgba(34,197,94,0.07);
+}
+
+.project-item.frogcompiler-theme .project-link { color: #4ade80; }
+.project-item.frogcompiler-theme .project-link:hover { border-color: #4ade80; color: #86efac; }
+
+.project-item.frogcompiler-theme .project-collab { color: rgba(34,197,94,0.3); }
+
+/* Center layout */
+.project-item.frogcompiler-theme { text-align: center; }
+.project-item.frogcompiler-theme .project-features { display:flex; justify-content:center; flex-wrap:wrap; gap:0.75rem; }
+.project-item.frogcompiler-theme .project-link { margin-left:auto; margin-right:auto; }
+.project-item.frogcompiler-theme .project-collab { text-align:center; }
+
+/* Art card */
+.project-item.frogcompiler-theme .project-art {
+  background: rgba(6,16,7,0.95);
+  border-color: rgba(34,197,94,0.25);
+  backdrop-filter: blur(12px);
+  padding: 0;
+  overflow: hidden;
+}
+.project-item.frogcompiler-theme .project-art:hover {
+  border-color: rgba(34,197,94,0.55);
+  box-shadow: 0 0 30px rgba(34,197,94,0.18), 0 0 60px rgba(34,197,94,0.06);
+}
+
+/* Terminal header */
+.project-item.frogcompiler-theme .art-terminal-header {
+  background: rgba(15,30,16,0.9);
+  border-bottom: 1px solid rgba(34,197,94,0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  flex-shrink: 0;
+}
+.project-item.frogcompiler-theme .art-terminal-dot {
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34,197,94,0.75);
+}
+.project-item.frogcompiler-theme .art-terminal-title {
+  color: rgba(74,222,128,0.7);
+  font-size: 9px;
+  flex: 1;
+}
+
+/* ── Frog IDE layout ───────────────────────── */
+.frog-menu-bar {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.frog-menu-bar span {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  color: rgba(74,222,128,0.5);
+  cursor: default;
+}
+
+.frog-ide {
+  display: flex;
+  height: 160px;
+}
+
+/* Sidebar */
+.frog-sidebar {
+  width: 80px;
+  background: rgba(10,20,11,0.95);
+  border-right: 1px solid rgba(34,197,94,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 4px;
+  flex-shrink: 0;
+}
+.frog-sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  color: rgba(34,197,94,0.4);
+  letter-spacing: 0.08em;
+  padding: 0 2px 4px;
+  border-bottom: 1px solid rgba(34,197,94,0.1);
+  margin-bottom: 2px;
+}
+.frog-btn {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  cursor: default;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s, color 0.2s;
+}
+.frog-btn-lexical  { background: rgba(34,197,94,0.85); color: #0a160b; }
+.frog-btn-syntax   { background: rgba(34,197,94,0.85); color: #0a160b; }
+.frog-btn-tree     { background: rgba(34,197,94,0.85); color: #0a160b; }
+.frog-btn-semantic { background: rgba(34,197,94,0.85); color: #0a160b; }
+
+/* Running states */
+.art-compiler.compiling .frog-btn-lexical {
+  background: #16a34a;
+  animation: frogBtnPulse 0.4s ease infinite alternate;
+}
+@keyframes frogBtnPulse {
+  from { box-shadow: none; }
+  to   { box-shadow: 0 0 8px rgba(34,197,94,0.6); }
+}
+
+/* Code editor pane */
+.frog-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid rgba(34,197,94,0.1);
+}
+.frog-editor-top {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-bottom: 1px solid rgba(34,197,94,0.1);
+  background: rgba(12,22,13,0.8);
+}
+.frog-file-icon { font-size: 9px; }
+.frog-file-name {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(74,222,128,0.6);
+}
+.frog-code {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.frog-line {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: rgba(200,230,205,0.75);
+  line-height: 1.6;
+}
+.frog-indent { padding-left: 14px; }
+.fkw  { color: #4ade80; }
+.ffn  { color: #86efac; }
+.fnum { color: #fbbf24; }
+
+/* Output pane */
+.frog-output {
+  width: 95px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  background: rgba(8,16,9,0.9);
+}
+.frog-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(34,197,94,0.15);
+  flex-shrink: 0;
+}
+.frog-tab {
+  font-family: var(--font-mono);
+  font-size: 6px;
+  padding: 3px 4px;
+  color: rgba(74,222,128,0.4);
+  cursor: default;
+  white-space: nowrap;
+}
+.frog-tab.active {
+  color: #4ade80;
+  border-bottom: 1px solid #4ade80;
+  margin-bottom: -1px;
+}
+.frog-result-pane {
+  flex: 1;
+  padding: 6px;
+  display: flex;
+  align-items: flex-start;
+}
+.frog-result-text {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  color: rgba(74,222,128,0.5);
+  line-height: 1.5;
+}
+
+/* Compiling state — result text */
+.art-compiler.compiling .frog-result-text {
+  color: #4ade80;
+  animation: frogBlink 0.5s step-end infinite;
+}
+@keyframes frogBlink {
+  50% { opacity: 0.3; }
+}
+
+/* Status bar */
+.frog-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: rgba(34,197,94,0.12);
+  border-top: 1px solid rgba(34,197,94,0.18);
+}
+.frog-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 4px rgba(34,197,94,0.6);
+  flex-shrink: 0;
+}
+.frog-status-msg {
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  color: rgba(74,222,128,0.6);
+}
+
+/* Compiling state — status */
+.art-compiler.compiling .frog-status-dot { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,0.7); }
+.art-compiler.compiling .frog-status-msg { color: #fbbf24; }
